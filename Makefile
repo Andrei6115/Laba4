@@ -11,10 +11,8 @@ OBJ = $(SRC:%.c=%.o)
 
 all: $(NAME)
 
-bonus: re
-
 $(NAME): $(OBJ) $(HEADER)
-		 @ar -r $(NAME) $(OBJ)
+		 @ar -r $(NAME) $(OBJ) && rm -rf $(OBJ)
 
 %.o : %.c
 		 @$(CC) -c $< -o $@
