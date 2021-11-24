@@ -20,18 +20,18 @@ void	ls_cleaner(t_list **start_list)
 {
 	if (!start_list)
 	{
-		printf("LIST EMPTY");
+		printf("NULL POINTER\n");
 		return ;
 	}
 	if (!(*start_list))
 	{
-		printf("List empty");
+		printf("List empty\n");
 	}
 	while ((*start_list)->next)
 	{
 		(*start_list) = (*start_list)->next;
 		free((*start_list)->prev);
 	}
-	free((*start_list));
+	//free((*start_list));
 	*start_list = NULL;
 }

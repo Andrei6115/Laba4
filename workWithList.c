@@ -76,16 +76,18 @@ void	create_before_pointer(t_list **list, int data)
 		return ;
 	}
 	temp = ls_addelem(data);
+	if (!temp)
+		return ;
 	if (!*list)
 		*list = temp;
 	else
 	{
 		if ((*list)->prev)
 		{
-			(*list)->prev = temp->prev;
+			temp->prev = (*list)->prev;
 			temp->prev->next = temp;
-			temp->next = (*list);
 			(*list)->prev = temp;
+			temp->next = (*list);
 		}
 		else
 		{
@@ -97,9 +99,7 @@ void	create_before_pointer(t_list **list, int data)
 
 void	vivod(t_list *list)
 {
-	printf("\tdata: %d\n", list->data);
-	printf("\tnext: %p\n", list->next);
-	printf("\tprev: %p\n", list->prev);
+	printf("\tdata: %d\n\tnext: %p\n\tprev: %p\n", list->data, list->next, list->prev);
 }
 
 void    startWork(void)
@@ -112,6 +112,7 @@ void    startWork(void)
 
 	taked_el = NULL;
 	list = NULL;
+	start_list = NULL;
 	printf("U are ready?\n1.\t\tLet's go\nAny key.\tExit\n");
 	scanf("%d", &switch_flag);
 	if (switch_flag != 1)
@@ -124,9 +125,15 @@ void    startWork(void)
 		switch (switch_flag)
 		{
 		case 1:
-			ls_cleaner(&start_list);
-			free(start_list);
-			free(list);
+			if (list)
+			{
+				ls_cleaner(&start_list);
+				list = NULL;
+			}
+			else
+			{
+				printf("List do not created\n");
+			}
 			break;
 		case 2:
 			if (list == NULL)
@@ -321,7 +328,18 @@ void    startWork(void)
 			scanf("%d", &data);
 			printf("\n");
 			create_before_pointer(&list, data);
-			start_list = list->prev;
+			if(!list)
+			{
+				printf("memmory not alocate\n");
+			}
+			else
+			{
+				start_list = list;
+				while (start_list->prev)
+				{
+					start_list=start_list->prev;
+				}
+			}
 			break;
 		case 19:
 			if (!start_list)
@@ -336,7 +354,7 @@ void    startWork(void)
 				start_list = start_list->next;
 				vivod(start_list);
 			}
-			printf("Enter any sym:\n");
+			printf("Enter any digit:\n");
 			scanf("%i", &data);
 			while (start_list->prev)
 			{
@@ -345,7 +363,7 @@ void    startWork(void)
 				start_list = start_list->prev;
 			}
 			vivod(start_list);
-			printf("Enter any sym:\n");
+			printf("Enter any digit:\n");
 			scanf("%i", &data);
 			break;
 		case 20:

@@ -12,15 +12,15 @@ OBJ = $(SRC:%.c=%.o)
 all: $(NAME)
 
 $(NAME): $(OBJ) $(HEADER)
-		 @ar -r $(NAME) $(OBJ) && rm -rf $(OBJ)
+		 ar -r $(NAME) $(OBJ) && rm -rf $(OBJ)
 
 %.o : %.c
-		 @$(CC) -c $< -o $@
+		 $(CC) -c $< -o $@
 
 clean:
-		 @rm -rf $(OBJ)
+		 rm -rf $(OBJ)
 
 fclean:	 clean
-		 @rm -rf $(NAME)
+		 rm -rf $(NAME)
 
 re:		 fclean all
