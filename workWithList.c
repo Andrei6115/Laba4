@@ -113,14 +113,20 @@ void    startWork(void)
 	taked_el = NULL;
 	list = NULL;
 	start_list = NULL;
-	printf("U are ready?\n1.\t\tLet's go\nAny key.\tExit\n");
+	system("clear");
+	printf("⠄⠄⢀⡋⣡⣴⣶⣶⡀⠄⠄⠙⢿⣿⣿⣿⣿⣿⣴⣿⣿⣿⢃⣤⣄⣀⣥⣿⣿⠄\n⠄⠄⢸⣇⠻⣿⣿⣿⣧⣀⢀⣠⡌⢻⣿⣿⣿⣿⣿⣿⣿⣿⣿⠿⠿⠿⣿⣿⣿⠄\n⠄⢀⢸⣿⣷⣤⣤⣤⣬⣙⣛⢿⣿⣿⣿⣿⣿⣿⡿⣿⣿⡍⠄⠄⢀⣤⣄⠉⠋⣰\n⠄⣼⣖⣿⣿⣿⣿⣿⣿⣿⣿⣿⢿⣿⣿⣿⣿⣿⢇⣿⣿⡷⠶⠶⢿⣿⣿⠇⢀⣤\n⠘⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣽⣿⣿⣿⡇⣿⣿⣿⣿⣿⣿⣷⣶⣥⣴⣿⡗\n⢀⠈⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡟⠄\n⢸⣿⣦⣌⣛⣻⣿⣿⣧⠙⠛⠛⡭⠅⠒⠦⠭⣭⡻⣿⣿⣿⣿⣿⣿⣿⣿⡿⠃⠄\n⠘⣿⣿⣿⣿⣿⣿⣿⣿⡆⠄⠄⠄⠄⠄⠄⠄⠄⠹⠈⢋⣽⣿⣿⣿⣿⣵⣾⠃⠄\n⠄⠘⣿⣿⣿⣿⣿⣿⣿⣿⠄⣴⣿⣶⣄⠄⣴⣶⠄⢀⣾⣿⣿⣿⣿⣿⣿⠃⠄\n⠄⠄⠈⠻⣿⣿⣿⣿⣿⣿⡄⢻⣿⣿⣿⠄⣿⣿⡀⣾⣿⣿⣿⣿⣛⠛⠁⠄⠄\n⠄⠄⠄⠄⠈⠛⢿⣿⣿⣿⠁⠞⢿⣿⣿⡄⢿⣿⡇⣸⣿⣿⠿⠛⠁⠄⠄\n");
+	printf("Are U ready?\n1.\t\tLet's go\nAny key.\tExit\n");
 	scanf("%d", &switch_flag);
+	fflush(stdin);
 	if (switch_flag != 1)
 		return ;
 	while (1)
 	{
+		system("clear");
+		printf("⠄⠄⢀⡋⣡⣴⣶⣶⡀⠄⠄⠙⢿⣿⣿⣿⣿⣿⣴⣿⣿⣿⢃⣤⣄⣀⣥⣿⣿⠄\n⠄⠄⢸⣇⠻⣿⣿⣿⣧⣀⢀⣠⡌⢻⣿⣿⣿⣿⣿⣿⣿⣿⣿⠿⠿⠿⣿⣿⣿⠄\n⠄⢀⢸⣿⣷⣤⣤⣤⣬⣙⣛⢿⣿⣿⣿⣿⣿⣿⡿⣿⣿⡍⠄⠄⢀⣤⣄⠉⠋⣰\n⠄⣼⣖⣿⣿⣿⣿⣿⣿⣿⣿⣿⢿⣿⣿⣿⣿⣿⢇⣿⣿⡷⠶⠶⢿⣿⣿⠇⢀⣤\n⠘⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣽⣿⣿⣿⡇⣿⣿⣿⣿⣿⣿⣷⣶⣥⣴⣿⡗\n⢀⠈⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡟⠄\n⢸⣿⣦⣌⣛⣻⣿⣿⣧⠙⠛⠛⡭⠅⠒⠦⠭⣭⡻⣿⣿⣿⣿⣿⣿⣿⣿⡿⠃⠄\n⠘⣿⣿⣿⣿⣿⣿⣿⣿⡆⠄⠄⠄⠄⠄⠄⠄⠄⠹⠈⢋⣽⣿⣿⣿⣿⣵⣾⠃⠄\n⠄⠘⣿⣿⣿⣿⣿⣿⣿⣿⠄⣴⣿⣶⣄⠄⣴⣶⠄⢀⣾⣿⣿⣿⣿⣿⣿⠃⠄\n⠄⠄⠈⠻⣿⣿⣿⣿⣿⣿⡄⢻⣿⣿⣿⠄⣿⣿⡀⣾⣿⣿⣿⣿⣛⠛⠁⠄⠄\n⠄⠄⠄⠄⠈⠛⢿⣿⣿⣿⠁⠞⢿⣿⣿⡄⢿⣿⡇⣸⣿⣿⠿⠛⠁⠄⠄\n");
 		printf("1. Cleaner\n2. List clear?\n3. Pointer to start\n4. Pointer to end\n5. Pointer at start?\n6. Pointer at end?\n7. Pointer next\n8. Pointer prev\n9. Value after pointer\n10.Value before pointer\n11.Delete after pointer\n12.Delete before pointer\n13.Take after pointer\n14.Take before pointer\n15.Change after pointer\n16.Change before pointer\n17.Create after ponter\n18.Create before pointer\n19.Print list\n20.Exit\n\tU entered:");
 		scanf("%d", &switch_flag);
+		fflush(stdin);
 		system("clear");
 		switch (switch_flag)
 		{
@@ -167,7 +173,7 @@ void    startWork(void)
 			{
 				printf("List do not created\n");
 			}	
-			else if (list == start_list)
+			else if (!list->prev)
 					printf("Pointer in start\n");
 				else
 					printf("Pointer not in start\n");
@@ -177,12 +183,12 @@ void    startWork(void)
 			{
 				printf("List do not created\n");
 			}
-			else if (!list->prev)
+			else if (!list->next)
 					printf("Pointer in end\n");
 				else
 					printf("Pointer not in end\n");
 			break;
-		case 7:
+		case 7:	
 			if (!list)
 			{
 				printf("List do not created\n");
@@ -291,6 +297,7 @@ void    startWork(void)
 			{
 				printf("Enter data for el:");
 				scanf("%d", &data);
+				fflush(stdin);
 				printf("\n");
 				list->next->data = data;
 			}
@@ -308,6 +315,7 @@ void    startWork(void)
 			{
 				printf("Enter data for el:");
 				scanf("%d", &data);
+				fflush(stdin);
 				printf("\n");
 				list->prev->data = data;
 			}
@@ -319,6 +327,7 @@ void    startWork(void)
 		case 17:
 			printf("Enter data for el:");
 			scanf("%d", &data);
+			fflush(stdin);
 			printf("\n");
 			create_after_pointer(&list, data);
 			start_list = list;
@@ -326,6 +335,7 @@ void    startWork(void)
 		case 18:
 			printf("Enter data for el:");
 			scanf("%d", &data);
+			fflush(stdin);
 			printf("\n");
 			create_before_pointer(&list, data);
 			if(!list)
@@ -347,28 +357,38 @@ void    startWork(void)
 				printf("empty list\n");
 				break;
 			}
+			if (start_list == list)
+				printf("(￢_￢)");
 			vivod(start_list);
 			while (start_list->next)
 			{
 				printf("\t\t\\|/\n");
 				start_list = start_list->next;
+				if (start_list == list)
+					printf("(￢_￢)");
 				vivod(start_list);
 			}
-			printf("Enter any digit:\n");
-			scanf("%i", &data);
+			printf("Press \"enter\"\n");
+			getchar();
+			getchar();
+			fflush(stdin);
 			while (start_list->prev)
 			{
+				if (start_list == list)
+					printf("(￢_￢)");
 				vivod(start_list);
 				printf("\t\t/|\\\n");
 				start_list = start_list->prev;
 			}
+			if (start_list == list)
+					printf("(￢_￢)");
 			vivod(start_list);
-			printf("Enter any digit:\n");
-			scanf("%i", &data);
+			printf("Press \"enter\"\n");
+			getchar();
+				fflush(stdin);
 			break;
 		case 20:
 			ls_cleaner(&start_list);
-			free(list);
 			exit(0);
 			break;	
 		default:
