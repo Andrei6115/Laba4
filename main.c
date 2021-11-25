@@ -1,5 +1,9 @@
 #include "linnkedList.h"
 int main(void)
 {
-    startWork();
+    while (1)
+    {
+        startWork();
+    }
+
 }

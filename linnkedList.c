@@ -26,12 +26,13 @@ void	ls_cleaner(t_list **start_list)
 	if (!(*start_list))
 	{
 		printf("List empty\n");
+		return ;
 	}
 	while ((*start_list)->next)
 	{
 		(*start_list) = (*start_list)->next;
 		free((*start_list)->prev);
 	}
-	//free((*start_list));
+	free((*start_list));
 	*start_list = NULL;
 }
