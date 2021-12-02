@@ -302,6 +302,9 @@ void    startWork(void)
 				{
 					list->next = NULL;
 				}
+				printf("Taked el: ");
+				vivod(taked_el);
+				printf("\n");
 			}
 			else
 			{
@@ -325,6 +328,13 @@ void    startWork(void)
 				{
 					list->prev = NULL;
 				}
+				printf("Taked el: ");
+				vivod(taked_el);
+				printf("\n");
+			}
+			else
+			{
+				printf("No element\n");
 			}
 			break;
 		case 15:
